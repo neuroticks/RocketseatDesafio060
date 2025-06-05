@@ -12,15 +12,15 @@ API para um sistema de gerenciamento de tarefas, onde usuários podem:
 
 ### **🛠 Tecnologias e Recursos**  
 
-| Categoria          | Tecnologias/Ferramentas                                 |
-|--------------------|---------------------------------------------------------|
-| **Backend**        | Node.js, Express.js, TypeScript                         |
-| **Banco de Dados** | PostgreSQL                                              |
-| **Autenticação**   | JWT (JSON Web Tokens), Bcrypt para hash de senhas       |
-| **Testes**         | Jest, Supertest                                         |
-| **Deploy**         | Render, Heroku ou AWS                                   |
-| **Documentação**   | Swagger/OpenAPI                                         |
-| **Controle**       | Git, GitHub Actions (CI/CD)                             |
+| Categoria          | Tecnologias/Ferramentas                                                      |
+|--------------------|------------------------------------------------------------------------------|
+| **Backend**        | Node.js, Express.js, TypeScript                                              |
+| **Banco de Dados** | PostgreSQL                                                                   |
+| **Autenticação**   | JWT (JSON Web Tokens), Bcrypt para hash de senhas                            |
+| **Testes**         | Jest, Supertest                                                              |
+| **Deploy**         | Render, Heroku ou AWS                                                        |
+| **Documentação**   | Swagger/OpenAPI                                                              |
+| **Controle**       | Git, GitHub Actions (CI/CD)                                                  |
 
 ---
 
