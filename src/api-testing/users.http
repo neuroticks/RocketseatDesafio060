@@ -1,0 +1,26 @@
+# ****************
+# USERS (Usuários)
+# ****************
+### Cria usuário MEMBER
+POST http://localhost:3333/users HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Joao Membro",
+    "email": "joao@email.com",
+    "password": "123abc"
+}
+
+### Cria usuário ADMIN
+POST http://localhost:3333/users HTTP/1.1
+content-type: application/json
+
+{
+    "name": "José Admin",
+    "email": "jose@email.com",
+    "password": "123abc"
+}
+
+### # # # # # # # # # # # # # # # # # #
+GET http://localhost:3333/users HTTP/1.1
+content-type: application/json
