@@ -1,0 +1,80 @@
+# ****************
+# TEAMS (Times)
+# ****************
+# ===================================================
+### 1. Autenticação (login ADMIN)
+# @name login
+POST http://localhost:3333/sessions HTTP/1.1
+content-type: application/json
+
+{
+    "email": "jose@email.com",
+    "password": "123abc"
+}
+
+# ===================================================
+### 1. Autenticação (login MEMBER)
+# @name login
+POST http://localhost:3333/sessions HTTP/1.1
+content-type: application/json
+
+{
+    "email": "joao@email.com",
+    "password": "123abc"
+}
+
+# ===================================================
+### 2. Recupera o token de autenticação
+@token = {{login.response.body.token}}
+
+# ===================================================
+# Manipulação básica de times (criar, atualizar, excluir)
+
+### Cria um TIME
+
+POST http://localhost:3333/teams HTTP/1.1
+Authorization: Bearer {{token}}
+content-type: application/json
+
+{
+    "name": "Desenv",
+    "description": "Time do Development"
+}
+
+### Atualiza um TIME/:team_id
+PATCH http://localhost:3333/teams/2 HTTP/1.1
+Authorization: Bearer {{token}}
+content-type: application/json
+
+{
+    "name": "Dev",
+    "description": "Time de Dev"
+}
+
+### Lista os TIMES
+GET http://localhost:3333/teams HTTP/1.1
+Authorization: Bearer {{token}}
+content-type: application/json
+
+### Deleta um TIME/:team_id
+DELETE http://localhost:3333/teams/1 HTTP/1.1
+Authorization: Bearer {{token}}
+content-type: application/json
+
+# ===================================================
+# Manipulação avançada de times (incluir membro, remover membro)
+
+### Incluir no TIME/:team_id o USUARIO/:user_id
+POST http://localhost:3333/teams/2/75 HTTP/1.1
+Authorization: Bearer {{token}}
+content-type: application/json
+
+### Remover do TIME/:team_id o USUARIO/:user_id
+DELETE  http://localhost:3333/teams/2/75 HTTP/1.1
+Authorization: Bearer {{token}}
+content-type: application/json
+
+### VISUALIZA USUARIOS em um TIME/:team_id
+GET  http://localhost:3333/teams/2 HTTP/1.1
+Authorization: Bearer {{token}}
+content-type: application/json

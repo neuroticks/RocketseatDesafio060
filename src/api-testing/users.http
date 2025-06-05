@@ -24,3 +24,14 @@ content-type: application/json
 ### # # # # # # # # # # # # # # # # # #
 GET http://localhost:3333/users HTTP/1.1
 content-type: application/json
+
+### Cria usuário MEMBER
+POST http://localhost:3333/users HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Paulo Membro",
+    "email": "paulo@email.com",
+    "password": "123abc"
+}
+
