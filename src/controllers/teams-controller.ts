@@ -2,7 +2,6 @@ import { AppError } from "@/utils/AppError"
 import { Request, Response } from "express"
 import { prisma } from "@/database/prisma"
 import { z } from "zod"
-import { tr } from "zod/v4/locales"
 
 class TeamsController {
 
