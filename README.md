@@ -49,7 +49,7 @@ API para um sistema de gerenciamento de tarefas, onde usuários podem:
 ### **🚀 Como Executar**  
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/task-manager-api.git
+git clone https://github.com/neuroticks/RocketseatDesafio060.git
 
 # Instale as dependências
 npm install
