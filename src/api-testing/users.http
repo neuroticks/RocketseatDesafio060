@@ -6,8 +6,8 @@ POST http://localhost:3333/users HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Joao Membro",
-    "email": "joao@email.com",
+    "name": "Joao Membro1",
+    "email": "membro.dev@email.com",
     "password": "123abc"
 }
 
@@ -17,7 +17,7 @@ content-type: application/json
 
 {
     "name": "José Admin",
-    "email": "jose@email.com",
+    "email": "admin@email.com",
     "password": "123abc"
 }
 
@@ -30,8 +30,8 @@ POST http://localhost:3333/users HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Paulo Membro",
-    "email": "paulo@email.com",
+    "name": "Paulo Membro2",
+    "email": "membro.suporte@email.com",
     "password": "123abc"
 }
 

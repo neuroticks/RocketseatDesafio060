@@ -8,7 +8,7 @@ POST http://localhost:3333/sessions HTTP/1.1
 content-type: application/json
 
 {
-    "email": "jose@email.com",
+    "email": "admin@email.com",
     "password": "123abc"
 }
 
@@ -42,7 +42,7 @@ content-type: application/json
 }
 
 ### Atualiza um TIME/:team_id
-PATCH http://localhost:3333/teams/2 HTTP/1.1
+PATCH http://localhost:3333/teams/1 HTTP/1.1
 Authorization: Bearer {{token}}
 content-type: application/json
 
@@ -65,7 +65,7 @@ content-type: application/json
 # Manipulação avançada de times (incluir membro, remover membro)
 
 ### Incluir no TIME/:team_id o USUARIO/:user_id
-POST http://localhost:3333/teams/2/75 HTTP/1.1
+POST http://localhost:3333/teams/2/4 HTTP/1.1
 Authorization: Bearer {{token}}
 content-type: application/json
 

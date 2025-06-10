@@ -1,0 +1,73 @@
+# ****************
+# TASKS (Tarefas)
+# ****************
+# ===================================================
+### 1. Autenticação (login ADMIN)
+# @name login
+POST http://localhost:3333/sessions HTTP/1.1
+content-type: application/json
+
+{
+    "email": "admin@email.com",
+    "password": "123abc"
+}
+
+# ===================================================
+### 1. Autenticação (login MEMBER)
+# @name login
+POST http://localhost:3333/sessions HTTP/1.1
+content-type: application/json
+
+{
+    "email": "membro.dev@email.com",
+    "password": "123abc"
+}
+
+# ===================================================
+### 2. Recupera o token de autenticação
+@token = {{login.response.body.token}}
+# ===================================================
+# Manipulação básica de TAREFAS (criar, atualizar, excluir, listar)
+
+### Cria uma TASK
+POST http://localhost:3333/tasks HTTP/1.1
+Authorization: Bearer {{token}}
+content-type: application/json
+
+{
+    "title": "Teste de exclusão",
+    "description": ""
+}
+
+### Atualiza uma TASK/:task_id
+PATCH http://localhost:3333/tasks/8 HTTP/1.1
+Authorization: Bearer {{token}}
+content-type: application/json
+
+{
+    "status": "in_progress",
+    "priority": "medium",
+    "assign_to": "2",
+    "team_id": "1",
+    "description": "tarefa criada para testar a exclusão."
+}
+
+### Atualiza STATUS de uma TASK/:task_id
+PATCH http://localhost:3333/tasks/8/update_status HTTP/1.1
+Authorization: Bearer {{token}}
+content-type: application/json
+
+{
+    "status": "completed"
+}
+
+### Lista as TASKS do TEAM do USER logado (Se for ADMIN lista todas)
+GET http://localhost:3333/tasks HTTP/1.1
+Authorization: Bearer {{token}}
+content-type: application/json
+
+### Deleta uma TASK/:task_id
+DELETE http://localhost:3333/tasks/8 HTTP/1.1
+Authorization: Bearer {{token}}
+content-type: application/json
+
