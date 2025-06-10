@@ -6,7 +6,7 @@ POST http://localhost:3333/sessions HTTP/1.1
 content-type: application/json
 
 {
-    "email": "jose@email.com",
+    "email": "admin@email.com",
     "password": "123abc"
 }
 

@@ -32,7 +32,7 @@ class UsersController {
 
     const { password: _, ...userWithoutPassword } = user
 
-    return response.status(201).json(userWithoutPassword)
+    return response.status(201).json({ userWithoutPassword })
   }
   async index(request: Request, response: Response) {
     const l_users = await prisma.user.findMany()

@@ -2,7 +2,6 @@ import { AppError } from "@/utils/AppError"
 import { Request, Response } from "express"
 import { prisma } from "@/database/prisma"
 import { z } from "zod"
-import { tr } from "zod/v4/locales"
 
 class TeamsController {
 
@@ -15,21 +14,21 @@ class TeamsController {
 
     const { name, description } = bodySchema.parse(request.body)
 
-    const l_team_created = await prisma.team.create({
+    const teamCreated = await prisma.team.create({
       data: {
         name,
         description
       }
     })
 
-    return response.status(201).json(l_team_created)
+    return response.status(201).json({ teamCreated })
   }
 
   // Lista TEAMS
   async index(request: Request, response: Response) {
     const l_teams = await prisma.team.findMany()
 
-    return response.json({ users: l_teams })
+    return response.json({ teams: l_teams })
   }
 
   // Atualiza TEAM

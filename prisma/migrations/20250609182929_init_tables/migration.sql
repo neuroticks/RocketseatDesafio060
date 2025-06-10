@@ -44,12 +44,12 @@ CREATE TABLE "team_members" (
 -- CreateTable
 CREATE TABLE "tasks" (
     "id" SERIAL NOT NULL,
-    "title" VARCHAR(200) NOT NULL,
-    "description" TEXT,
+    "title" VARCHAR(100) NOT NULL,
+    "description" VARCHAR(200) NOT NULL,
     "status" "Status" NOT NULL DEFAULT 'pending',
     "priority" "Priority" NOT NULL DEFAULT 'low',
-    "assigned_to" INTEGER NOT NULL,
-    "team_id" INTEGER NOT NULL,
+    "assigned_to" INTEGER,
+    "team_id" INTEGER,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" TIMESTAMP(3),
 
@@ -75,10 +75,10 @@ ALTER TABLE "team_members" ADD CONSTRAINT "team_members_user_id_fkey" FOREIGN KE
 ALTER TABLE "team_members" ADD CONSTRAINT "team_members_team_id_fkey" FOREIGN KEY ("team_id") REFERENCES "teams"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "tasks" ADD CONSTRAINT "tasks_assigned_to_fkey" FOREIGN KEY ("assigned_to") REFERENCES "users"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "tasks" ADD CONSTRAINT "tasks_assigned_to_fkey" FOREIGN KEY ("assigned_to") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "tasks" ADD CONSTRAINT "tasks_team_id_fkey" FOREIGN KEY ("team_id") REFERENCES "teams"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "tasks" ADD CONSTRAINT "tasks_team_id_fkey" FOREIGN KEY ("team_id") REFERENCES "teams"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "tasks_history" ADD CONSTRAINT "tasks_history_task_id_fkey" FOREIGN KEY ("task_id") REFERENCES "tasks"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
